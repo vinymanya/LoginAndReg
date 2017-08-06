@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logged In</title>
+</head>
+<body>
+<h1>You are Successfully loggedin!!! Congratulation!</h1>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+</body>
+</html>

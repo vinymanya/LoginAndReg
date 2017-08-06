@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login And Registration</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'style2.css')}}">
+</head>
+<body>
+<h2>Login Area</h2>
+<form action="/login" method="post">
+	<fieldset>
+		<legend>Login here</legend>
+		<label for="un">Username:</label>
+		<input type="text" name="first_name" id="un">
+		<label for="pw">Password:</label>
+		<input type="password" name="password" id="pw">
+		<input type="submit" value="Login">
+	</fieldset>
+</form>
+<hr>
+<br>
+<h1>Registration</h1>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<form action="/register" method="post">
+	<label for="fn">First Name:</label>
+	<input type="text" name="first_name" id="fn"><br><br>
+	<label for="ln">Last Name:</label>
+	<input type="text" name="last_name" id="ln"><br><br>
+	<label for="em">Email:</label>
+	<input type="email" name="email" id="em"><br><br>
+	<label for="pw">Password:</label>
+	<input type="password" name="password" id="pw"><br><br>
+	<label for="pwc">Confirmation Password:</label>
+	<input type="password" name="pw_con" id="pwc"><br><br>
+	<input type="submit" value="Register">
+</form>
+</body>
+</html>
